@@ -1,0 +1,347 @@
+.chat-box {
+    max-height: 300px;
+    overflow-y: auto;
+    padding: 10px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    background: #f9f9f9;
+    display: flex;
+    flex-direction: column; /* Messages will stack upwards */
+    justify-content: flex-end; /* Ensure that the recent messages are at the bottom */
+}
+
+.typing-field {
+    display: flex;
+    align-items: center;
+    position: sticky;
+    bottom: 0;
+    background: #efefef;
+    padding: 10px;
+    border-top: 1px solid #d9d9d9;
+    z-index: 100; /* Keeps it on top of other elements */
+}
+
+.input-data {
+    flex: 1;
+    margin-right: 10px;
+}
+
+.input-data input {
+    width: 100%;
+    padding: 8px;
+    font-size: 14px;
+    border: 1px solid #ddd;
+    border-radius: 3px;
+}
+
+.input-data button {
+    padding: 8px 15px;
+    font-size: 14px;
+    background: #007bff;
+    color: #fff;
+    border: 1px solid #007bff;
+    border-radius: 3px;
+    cursor: pointer;
+}
+
+.message {
+    margin: 10px;
+    padding: 10px;
+    border-radius: 5px;
+}
+
+.user {
+    background: #007bff;
+    color: #fff;
+    text-align: right;
+}
+
+.bot {
+    background: #f1f1f1;
+    color: #070707;
+}
+
+.answer-options {
+    display: flex;
+    flex-wrap: wrap;
+    margin-top: 10px;
+}
+
+.answer-button {
+    margin: 3px;
+    padding: 5px 10px;
+    font-size: 12px;
+    background: #007bff;
+    color: #ffffff;
+    border: 1px solid #007bff;
+    border-radius: 3px;
+    cursor: pointer;
+    outline: solid;
+}
+.send-btn{
+    margin: 3px;
+    padding: 5px 10px;
+    font-size: 12px;
+    background: #007bff;
+    color: #ffffff;
+    border: 1px solid #007bff;
+    border-radius: 3px;
+    cursor: pointer;
+    outline: solid;
+}
+
+.typing-field {
+    display: flex;
+    align-items: center;
+    margin-top: 100px;
+    outline: solid;
+    outline-color: grey;
+}
+
+.input-data {
+    flex: 1;
+    margin-right: 10px;
+}
+
+.input-data input {
+    width: 100%;
+    padding: 8px;
+    font-size: 14px;
+    border: 1px solid #ddd;
+    border-radius: 3px;
+    outline: solid;
+    outline-color: grey;
+}
+
+.input-data button {
+    padding: 8px 15px;
+    font-size: 14px;
+    background: #007bff;
+    color: #fff;
+    border: 1px solid #007bff;
+    border-radius: 3px;
+    cursor: pointer;
+    outline: none;
+}
+
+.final-message {
+    margin-top: 20px;
+    font-weight: bold;
+}
+
+.hidden {
+    display: none;
+}
+
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@200;300;400;500;600;700&display=swap');
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Arial, sans-serif;
+}
+
+::selection{
+    color: #fff;
+    background: #007bff;
+}
+
+::-webkit-scrollbar{
+    width: 3px;
+    border-radius: 25px;
+}
+::-webkit-scrollbar-track{
+    background: #f1f1f1;
+}
+::-webkit-scrollbar-thumb{
+    background: #ddd;
+}
+::-webkit-scrollbar-thumb:hover{
+    background: #ccc;
+}
+
+.wrapper{
+    width: auto;
+    background: #fff;
+    border-radius: 5px;
+    border: 1px solid lightgrey;
+    border-top: 0px;
+}
+.wrapper .title{
+    background: #007bff;
+    color: #fff;
+    font-size: 20px;
+    font-weight: 500;
+    line-height: 60px;
+    text-align: center;
+    border-bottom: 1px solid #006fe6;
+    border-radius: 5px 5px 0 0;
+}
+.wrapper .form{
+    padding: 20px 15px;
+    min-height: 400px;
+    max-height: 400px;
+    overflow-y: auto;
+}
+.wrapper .form .inbox{
+    width: 100%;
+    display: flex;
+    align-items: baseline;
+}
+.wrapper .form .user-inbox{
+    justify-content: flex-end;
+    margin: 13px 0;
+}
+.wrapper .form .inbox .icon{
+    height: 40px;
+    width: 40px;
+    color: #fff;
+    text-align: center;
+    line-height: 40px;
+    border-radius: 50%;
+    font-size: 18px;
+    background: #007bff;
+}
+.wrapper .form .inbox .msg-header{
+    max-width: 53%;
+    margin-left: 10px;
+}
+.form .inbox .msg-header p{
+    color: #fff;
+    background: #007bff;
+    border-radius: 10px;
+    padding: 8px 10px;
+    font-size: 14px;
+    word-break: break-all;
+}
+.form .user-inbox .msg-header p{
+    color: #333;
+    background: #efefef;
+}
+.wrapper .typing-field{
+    display: flex;
+    height: 60px;
+    width: 100%;
+    align-items: center;
+    justify-content: space-evenly;
+    background: #efefef;
+    border-top: 1px solid #d9d9d9;
+    border-radius: 0 0 5px 5px;
+}
+.wrapper .typing-field .input-data{
+    height: 40px;
+    width: 335px;
+    position: relative;
+}
+.wrapper .typing-field .input-data input{
+    height: 100%;
+    width: 100%;
+    outline: none;
+    border: 1px solid transparent;
+    padding: 0 80px 0 15px;
+    border-radius: 3px;
+    font-size: 15px;
+    background: #fff;
+    transition: all 0.3s ease;
+}
+.typing-field .input-data input:focus{
+    border-color: rgba(0,123,255,0.8);
+}
+.input-data input::placeholder{
+    color: #999999;
+    transition: all 0.3s ease;
+}
+.input-data input:focus::placeholder{
+    color: #bfbfbf;
+}
+.wrapper .typing-field .input-data button{
+    position: absolute;
+    right: 5px;
+    top: 50%;
+    height: 30px;
+    width: 65px;
+    color: #fff;
+    font-size: 16px;
+    cursor: pointer;
+    outline: none;
+    opacity: 0;
+    pointer-events: none;
+    border-radius: 3px;
+    background: #007bff;
+    border: 1px solid #007bff;
+    transform: translateY(-50%);
+    transition: all 0.3s ease;
+}
+.wrapper .typing-field .input-data input:valid ~ button{
+    opacity: 1;
+    pointer-events: auto;
+}
+.typing-field .input-data button:hover{
+    background: #006fef;
+}
+
+.content-chat {
+    display: flex;
+    justify-content: space-between;
+    margin: 20px;
+} 
+
+.left-column, .middle-column, .right-column {
+    width: 30%; /* Adjust the width as needed */
+}
+
+.left-column {
+    background-color: #2A4B9B; /* Main blue color for left column */
+    color: #fff;
+    padding: 10px;
+}
+
+.middle-column {
+    background-color: #caced6; /* Light blue background for middle column */
+    padding: 10px;
+    color: #fff;
+}
+
+.right-column {
+    background-color: #214185; /* Slightly darker blue for right column */
+    color: #fff;
+    padding: 10px;
+}
+
+h4 {
+    font-size: 1.2em;
+    color: #333; /* Text color */
+    margin-bottom: 10px;
+  }
+  
+  h5 {
+    font-size: 1em;
+    color: #131313; /* Text color */
+    margin-bottom: 10px;
+  }
+  
+  .btn {
+    display: block;
+    width: 200px;
+    margin: 0 auto;
+    padding: 10px 20px;
+    font-size: 1em;
+    text-align: center;
+    border: none;
+    border-radius: 5px;
+    background-color: #007bff; /* Button background color */
+    color: #fff; /* Button text color */
+    cursor: pointer;
+    transition: background-color 0.3s, color 0.3s;
+  }
+  
+  .btn:hover {
+    background-color: #0056b3; /* Button background color on hover */
+  }
+  
+  .center {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+  
+  }

@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>Puzzle Game</title>
+    <style>
+        body {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            text-align: center;
+        }
+
+        button {
+            padding: 10px 15px;
+            background-color: #4c6baf; /* Green */
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+
+        button:hover {
+            background-color: #45a049; /* Darker green on hover */
+        }
+
+        #win-screen {
+            display: none;
+            margin-top: 20px;
+        }
+
+        #win-screen p {
+            font-size: 18px;
+            color: #4CAF50;
+            margin-bottom: 10px;
+        }
+    </style>
+</head>
+<body>
+    <div class="puzzle-container" id="puzzle-container"></div>
+    <script src="script.js"></script>
+    <!-- Back button -->
+    <div style="margin-top: 20px;">
+        <button onclick="restartGame()">Restart Game</button>
+        <button onclick="window.location.href='../counselling'">Back to Game Panel</button>
+    </div>
+    <!-- Win message and restart button -->
+    <div id="win-screen">
+        <p>Congratulations! You solved the puzzle!</p>
+        <button onclick="restartGame()">Restart Game</button>
+    </div>
+</body>
+</html>

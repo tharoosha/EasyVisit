@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Sliding Puzzle Game</title>
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Poppins&display=swap" rel="stylesheet" />
+    <!-- Stylesheet -->
+    <link rel="stylesheet" href="style.css" />
+    <style>
+        body {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            text-align: center;
+        }
+
+        button {
+            padding: 10px 15px;
+            background-color: #4c6baf; /* Green */
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+
+        button:hover {
+            background-color: #45a049; /* Darker green on hover */
+        }
+    </style>
+</head>
+<body>
+    <div class="cover-screen">
+        <p id="result"></p>
+        <button id="start-button">Start Game</button>
+    </div>
+    <div id="moves"></div>
+    <div class="slider-game">
+        <div class="container"></div>
+        <div class="original-image">
+            <img src="original_image.jpg" alt="" />
+        </div>
+    </div>
+    <!-- Script -->
+    <script src="script.js"></script>
+    <!-- Back button -->
+    <div style="margin-top: 20px;">
+      <button onclick="restartGame()">Restart Game</button>
+        <button onclick="redirectToCounselling()">Back to Game Panel</button>
+    </div>
+    <!-- Win message and restart button -->
+    <div id="win-screen" class="hide">
+        <p>You Win!</p>
+        <button onclick="restartGame()">Restart Game</button>
+    </div>
+
+    <script>
+        function redirectToCounselling() {
+            window.location.href = '../counselling';
+        }
+    </script>
+    
+</body>
+
+</html>
